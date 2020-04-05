@@ -1,5 +1,10 @@
 import styled, { keyframes, css } from 'styled-components';
 
+// styled.button.attrs((props) => ({
+//   type: 'submit',
+//   disabled: props.loading,
+// }))`
+
 export const Form = styled.form`
   margin-top: 30px;
   display: flex;
@@ -7,7 +12,7 @@ export const Form = styled.form`
 
   input {
     flex: 1;
-    border: 1px solid #eee;
+    border: 1px solid ${(props) => (props.error ? 'red' : '#eee')};
     padding: 10px 15px;
     border-radius: 4px;
     font-size: 16px;
