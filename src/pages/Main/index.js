@@ -8,7 +8,6 @@ import { Form, SubmitButton, List } from './styles';
 import Container from '../../Components/Container';
 
 export default class Main extends Component {
-  // eslint-disable-next-line react/state-in-constructor
   state = {
     newRepo: '',
     repositories: [],
