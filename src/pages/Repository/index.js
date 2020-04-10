@@ -180,7 +180,9 @@ export default class Repository extends Component {
             onClick={() => this.handlePagination('next')}
             className="next"
             type="button"
-            disabled={page === issuesCount && page !== 1 ? 1 : 0}
+            disabled={
+              page === issuesCount && (page !== 1 || page === 1) ? 1 : 0
+            }
           >
             <FaAngleRight />
           </button>
