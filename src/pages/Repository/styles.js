@@ -43,10 +43,37 @@ export const Owner = styled.header`
 `;
 
 export const IssueList = styled.ul`
-  padding-top: 30px;
+  padding-top: 5px;
   margin-top: 30px;
   border-top: 1px solid #eee;
   list-style: none;
+
+  .filter {
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      margin-left: 5px;
+      border-radius: 40px;
+      background: none;
+      border: 3px solid #7159c1;
+      padding: 3px 5px;
+      color: #7159c1;
+      transition: 0.2s;
+    }
+
+    button:hover:not(#selected) {
+      background: #7159c1;
+      color: #fff;
+      opacity: 0.5;
+    }
+
+    #selected {
+      color: #fff;
+      background: #7159c1;
+    }
+  }
 
   li {
     display: flex;
@@ -99,5 +126,44 @@ export const IssueList = styled.ul`
         color: #999;
       }
     }
+  }
+`;
+
+export const Pagination = styled.div.attrs((props) => ({
+  type: props.className,
+  disabled: props.disabled,
+}))`
+  margin-top: 5px;
+
+  button {
+    background: none;
+    border: 2px solid #7159c1;
+    height: 18px;
+    transition: 0.2s;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: auto;
+    }
+
+    svg {
+      padding: 0;
+      margin: 0;
+      color: #7159c1;
+    }
+  }
+
+  button:hover:not(.type) {
+    &:not(:disabled) {
+      background: #7159c1;
+
+      svg {
+        color: #fff;
+      }
+    }
+  }
+
+  span {
+    padding: 0 10px;
   }
 `;
